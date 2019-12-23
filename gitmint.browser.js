@@ -4242,6 +4242,7 @@ var Gitmint =
         req.open(method, url, true);
 
         console.log(url);
+        console.log(`token is ${token}`);
         const urlObject = new URL(url);
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
