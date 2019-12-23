@@ -4242,8 +4242,13 @@ var Gitmint =
         req.open(method, url, true);
 
         console.log(url);
-        console.log(req);
-        // req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
+        const urlObject = new URL(url);
+
+        // For https: //api.github.com/repos/pythonhunters/AMA/issues?...
+        // We shouldn't set Accept header.
+        if (!urlObject.pathname.endsWith('issues')) {
+          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
+        }
         if (token) {
           req.setRequestHeader('Authorization', 'token ' + token);
         }
