@@ -4241,8 +4241,6 @@ var Gitmint =
         });
         req.open(method, url, true);
 
-        console.log(url);
-        console.log(`token is ${token}`);
         const urlObject = new URL(url);
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
@@ -4683,8 +4681,6 @@ var Gitmint =
           }
 
           return this.getIssue().then(function(issue) {
-            console.log("line 4685");
-            console.log(issue);
             if (!issue.reactions.total_count) return [];
             return _utils.http.get(issue.reactions.url, {}, '');
           }).then(function(reactions) {
@@ -4706,8 +4702,6 @@ var Gitmint =
           var comentReactions = {};
 
           return Promise.all(comments.map(function(comment) {
-            console.log("line 4707");
-            console.log(comment);
             if (!comment.reactions.total_count) return [];
 
             var owner = _this11.owner,
