@@ -3883,6 +3883,8 @@ var Gitmint =
       var commentsList = document.createElement('ul');
       commentsList.className = 'gitment-comments-list';
 
+      console.log(comments);
+
       comments.forEach(function(comment) {
         var createDate = new Date(comment.created_at);
         var updateDate = new Date(comment.updated_at);
