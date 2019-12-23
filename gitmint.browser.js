@@ -4682,6 +4682,7 @@ var Gitmint =
           }
 
           return this.getIssue().then(function(issue) {
+            console.log("line 4685");
             if (!issue.reactions.total_count) return [];
             return _utils.http.get(issue.reactions.url, {}, '');
           }).then(function(reactions) {
@@ -4703,6 +4704,7 @@ var Gitmint =
           var comentReactions = {};
 
           return Promise.all(comments.map(function(comment) {
+            console.log("line 4707");
             if (!comment.reactions.total_count) return [];
 
             var owner = _this11.owner,
