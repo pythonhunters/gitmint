@@ -4248,9 +4248,9 @@ var Gitmint =
         if (urlObject.pathname.endsWith('comments')) {
           req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
         }
-        if (token) {
-          req.setRequestHeader('Authorization', 'token ' + token);
-        }
+        // if (token) {
+        //   req.setRequestHeader('Authorization', 'token ' + token);
+        // }
         if (method !== 'GET' && method !== 'DELETE') {
           if (isString(data)) {
             body = data;
@@ -4260,7 +4260,6 @@ var Gitmint =
             req.setRequestHeader('Content-Type', 'application/json');
           }
         }
-
         req.send(body);
         return p;
       };
