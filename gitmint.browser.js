@@ -4246,7 +4246,7 @@ var Gitmint =
         const urlObject = new URL(url);
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
-        if (urlObject.pathname.endsWith('comments')) {
+        if (urlObject.pathname.endsWith('comments') || urlObject.pathname.endsWith('issues')) {
           req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview');
         }
         if (urlObject.pathname.endsWith('user')) {
