@@ -4682,7 +4682,7 @@ var Gitmint =
           }
 
           return this.getIssue().then(function(issue) {
-            console.log(`line 4685 ${comment}`);
+            console.log(`line 4685 ${issue}`);
             if (!issue.reactions.total_count) return [];
             return _utils.http.get(issue.reactions.url, {}, '');
           }).then(function(reactions) {
