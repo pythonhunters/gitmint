@@ -4246,8 +4246,8 @@ var Gitmint =
         const urlObject = new URL(url);
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
-        if (urlObject.pathname.endsWith('comments') || urlObject.pathname.endsWith('issues')) {
-          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview+json');
+        if (urlObject.pathname.endsWith('comments') || urlObject.pathname.endsWith('issues') || urlObject.pathname.endsWith('reactions')) {
+          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview+json,application/vnd.github.html+json');
         }
         req.setRequestHeader('Authorization', 'token ' + token);
         if (method !== 'GET' && method !== 'DELETE') {
