@@ -4247,7 +4247,7 @@ var Gitmint =
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
         if (urlObject.pathname.endsWith('comments')) {
-          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
+          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview');
         }
         if (urlObject.pathname.endsWith('user')) {
           req.setRequestHeader('Authorization', 'token ' + token);
