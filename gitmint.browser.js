@@ -4247,11 +4247,9 @@ var Gitmint =
 
         // https://developer.github.com/v3/issues/comments/#reactions-summary
         if (urlObject.pathname.endsWith('comments') || urlObject.pathname.endsWith('issues')) {
-          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview');
+          req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview+json');
         }
-        if (urlObject.pathname.endsWith('user')) {
-          req.setRequestHeader('Authorization', 'token ' + token);
-        }
+        req.setRequestHeader('Authorization', 'token ' + token);
         if (method !== 'GET' && method !== 'DELETE') {
           if (isString(data)) {
             body = data;
