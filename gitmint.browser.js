@@ -4244,9 +4244,8 @@ var Gitmint =
         console.log(url);
         const urlObject = new URL(url);
 
-        // For https: //api.github.com/repos/pythonhunters/AMA/issues?...
-        // We shouldn't set Accept header.
-        if (!urlObject.pathname.endsWith('issues') && !urlObject.pathname.endsWith('user')) {
+        // https://developer.github.com/v3/issues/comments/#reactions-summary
+        if (urlObject.pathname.includes('reactions')) {
           req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview, application/vnd.github.html+json, application/x-www-form-urlencoded, application/vnd.github.machine-man-preview+json');
         }
         if (token) {
