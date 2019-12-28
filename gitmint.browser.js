@@ -4253,7 +4253,7 @@ var Gitmint =
         if (urlObject.pathname.endsWith('comments') || urlObject.pathname.endsWith('issues')) {
           req.setRequestHeader('Accept', 'application/vnd.github.html+json,application/vnd.github.squirrel-girl-preview+json');
         }
-        if (urlObject.pathname.endsWith('reactions')) {
+        if (urlObject.pathname.includes('reactions')) {
           req.setRequestHeader('Accept', 'application/vnd.github.squirrel-girl-preview+json');
         }
         req.setRequestHeader('Authorization', 'token ' + token);
